@@ -27,15 +27,16 @@ C-LOOK algorithm
 
 * */
 
-
-
 package org.example;
 
 public class Main {
     public static void main(String[] args) {
+        // Request array
         int[] requests = {39, 84, 70, 42, 11, 55, 68, 23};
+        // Head position
         int head = 90;
 
+        // Create objects of the algorithms
         FCFS fcfs = new FCFS();
         SSTF sstf = new SSTF();
         SCAN scan = new SCAN();
@@ -43,21 +44,29 @@ public class Main {
         LOOK look = new LOOK();
         CLOOK clook = new CLOOK();
 
+
+        // Calculate the total head movement and seek time for each algorithm
         System.out.println("First Come First Serve (FCFS)");
         fcfs.calculate(requests, head);
+
+        // Calculate the total head movement and seek time for each algorithm
         System.out.println("Shortest Seek Time First (SSTF)");
         sstf.calculate(requests, head);
-        System.out.println("SCAN algorithm");
-        scan.calculate(requests, head);
-        System.out.println("C-SCAN algorithm");
-        cscan.calculate(requests, head);
-        System.out.println("LOOK algorithm");
-        look.calculate(requests, head);
+
+        // Calculate the total head movement and seek time for each algorithm
         System.out.println("C-LOOK algorithm");
         clook.calculate(requests, head);
 
+        // Calculate the total head movement and seek time for each algorithm
+        System.out.println("LOOK algorithm");
+        look.calculate(requests, head);
 
+        // Calculate the total head movement and seek time for each algorithm
+        System.out.println("C-SCAN algorithm");
+        cscan.calculate(requests, head);
+
+        // Calculate the total head movement and seek time for each algorithm
+       System.out.println("SCAN algorithm");
+       scan.calculate(requests, head);
     }
-
-
 }

@@ -26,6 +26,7 @@ public class CLOOK {
                     // Increase the total count
                     seek_count += distance;
 
+                    
                     // Accessed track is now the new head
                     head = cur_track;
                 }

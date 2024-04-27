@@ -1,10 +1,17 @@
 package org.example;
 
+import java.util.Arrays;
+
+import java.util.Arrays;
+
 public class CSCAN {
     public void calculate(int[] requests, int head) {
         int totalHeadMovement = 0;
         int currentTrack = head;
         int direction = 1;
+
+        // Sort requests in ascending order
+        Arrays.sort(requests);
 
         while (true) {
             boolean found = false;
@@ -21,20 +28,29 @@ public class CSCAN {
             }
 
             if (found) {
-                break;
+                continue;
             }
 
             totalHeadMovement++;
             currentTrack += direction;
 
+            // Handle boundary cases
             if (currentTrack == 100) {
-                direction = -1;
-                totalHeadMovement++;
+                direction = -1; // Move to the beginning of the disk
+                totalHeadMovement += 100; // Move to track 0
                 currentTrack = 0;
-            } else if (currentTrack == -1) {
-                direction = 1;
-                totalHeadMovement++;
-                currentTrack = 99;
+            }
+
+            // Check if all requests have been served
+            boolean allRequestsServed = true;
+            for (int request : requests) {
+                if (request != -1) {
+                    allRequestsServed = false;
+                    break;
+                }
+            }
+            if (allRequestsServed) {
+                break; // Exit the loop if all requests have been served
             }
         }
 

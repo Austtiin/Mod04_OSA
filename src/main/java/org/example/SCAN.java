@@ -1,10 +1,15 @@
 package org.example;
 
+import java.util.Arrays;
+
 public class SCAN {
     public void calculate(int[] requests, int head) {
         int totalHeadMovement = 0;
         int currentTrack = head;
         int direction = 1;
+
+        // Sort requests in ascending order
+        Arrays.sort(requests);
 
         while (true) {
             boolean found = false;
@@ -21,20 +26,34 @@ public class SCAN {
             }
 
             if (found) {
-                break;
+                continue;
             }
 
             totalHeadMovement++;
             currentTrack += direction;
 
+            // Handle boundary cases
+            if (currentTrack == 100 || currentTrack == -1) {
+                direction = -direction; // Reverse direction
+                totalHeadMovement++; // Move to the next track
+            }
+
             if (currentTrack == 100) {
-                direction = -1;
-                totalHeadMovement++;
-                currentTrack = 99;
+                currentTrack = 99; // Move to the last track
             } else if (currentTrack == -1) {
-                direction = 1;
-                totalHeadMovement++;
-                currentTrack = 0;
+                currentTrack = 0; // Move to the first track
+            }
+
+            // Check if all requests have been served
+            boolean allRequestsServed = true;
+            for (int request : requests) {
+                if (request != -1) {
+                    allRequestsServed = false;
+                    break;
+                }
+            }
+            if (allRequestsServed) {
+                break; // Exit the loop if all requests have been served
             }
         }
 
