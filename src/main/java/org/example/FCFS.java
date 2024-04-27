@@ -1,5 +1,5 @@
 // Java class for First-Come-First-Serve (FCFS) disk scheduling algorithm
-
+//https://www.geeksforgeeks.org/program-for-fcfs-cpu-scheduling-set-1/
 
 package org.example;
 

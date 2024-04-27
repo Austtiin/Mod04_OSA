@@ -1,5 +1,5 @@
 // Java class for LOOK Disk Scheduling algorithm
-
+//https://www.geeksforgeeks.org/look-disk-scheduling-algorithm/
 
 package org.example;
 

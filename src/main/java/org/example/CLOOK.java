@@ -1,5 +1,6 @@
 // Java program to demonstrate CLOOK Disk Scheduling
 // Algorithm
+// https://www.geeksforgeeks.org/c-look-disk-scheduling-algorithm/
 
 package org.example;
 

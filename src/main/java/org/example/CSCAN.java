@@ -1,5 +1,8 @@
 // Java program to implement CSCAN disk scheduling algorithm
 //         System.out.println("Scan algorithm");
+//https://www.geeksforgeeks.org/c-scan-disk-scheduling-algorithm/
+
+
 package org.example;
 
 import java.util.Arrays;

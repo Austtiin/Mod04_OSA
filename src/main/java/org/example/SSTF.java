@@ -1,4 +1,5 @@
 // Java class for SSTF (Shortest Seek Time First) algorithm
+//https://www.geeksforgeeks.org/sstf-full-form/
 
 
 package org.example;

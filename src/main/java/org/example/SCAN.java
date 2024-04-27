@@ -1,5 +1,5 @@
 // Java program to implement SCAN Disk Scheduling algorithm
-
+//https://www.geeksforgeeks.org/scan-elevator-disk-scheduling-algorithms/
 
 
 package org.example;
