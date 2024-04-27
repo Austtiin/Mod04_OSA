@@ -1,34 +1,53 @@
+// Java program to implement SCAN Disk Scheduling algorithm
+
+
+
 package org.example;
 
 import java.util.Arrays;
 
 public class SCAN {
     public void calculate(int[] requests, int head) {
+        // Total head movement
         int totalHeadMovement = 0;
         int currentTrack = head;
         int direction = 1;
 
+
+
         // Sort requests in ascending order
         Arrays.sort(requests);
 
+        // Handle boundary cases
         while (true) {
+            // Check if the current track is in the requests
             boolean found = false;
+
+            // Check if the current track is in the requests
             for (int i = 0; i < requests.length; i++) {
+                // If the request has been served, skip it
                 if (requests[i] == -1) {
+                    // Skip the request
                     continue;
                 }
 
+                // If the request has been served, skip it
                 if (requests[i] == currentTrack) {
-                    found = true;
-                    requests[i] = -1;
-                    break;
+
+                    found = true; // Request found
+                    requests[i] = -1; // Mark the request as served
+                    break; // Exit the loop
                 }
             }
 
+
+            // If the request has been served, skip it
             if (found) {
+                // Skip the request
                 continue;
             }
 
+            // Move to the next track
             totalHeadMovement++;
             currentTrack += direction;
 
@@ -38,6 +57,7 @@ public class SCAN {
                 totalHeadMovement++; // Move to the next track
             }
 
+            // Handle boundary cases
             if (currentTrack == 100) {
                 currentTrack = 99; // Move to the last track
             } else if (currentTrack == -1) {
@@ -46,8 +66,11 @@ public class SCAN {
 
             // Check if all requests have been served
             boolean allRequestsServed = true;
+            // Check if all requests have been served
             for (int request : requests) {
+                // Check if all requests have been served
                 if (request != -1) {
+                    // Check if all requests have been served
                     allRequestsServed = false;
                     break;
                 }
@@ -57,6 +80,7 @@ public class SCAN {
             }
         }
 
+        // Print the total head movement and seek time
         System.out.println("Total Head Movement: " + totalHeadMovement);
         System.out.println("Seek Time: " + totalHeadMovement);
     }

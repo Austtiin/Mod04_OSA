@@ -46,27 +46,27 @@ public class Main {
 
 
         // Calculate the total head movement and seek time for each algorithm
-        System.out.println("First Come First Serve (FCFS)");
+        System.out.println("FCFS - First Come First Serve");
         fcfs.calculate(requests, head);
 
         // Calculate the total head movement and seek time for each algorithm
-        System.out.println("Shortest Seek Time First (SSTF)");
+        System.out.println("SSTF - Shortest Seek Time First");
         sstf.calculate(requests, head);
 
         // Calculate the total head movement and seek time for each algorithm
-        System.out.println("C-LOOK algorithm");
+        System.out.println("CLook algorithm");
         clook.calculate(requests, head);
 
         // Calculate the total head movement and seek time for each algorithm
-        System.out.println("LOOK algorithm");
+        System.out.println("Look algorithm");
         look.calculate(requests, head);
 
         // Calculate the total head movement and seek time for each algorithm
-        System.out.println("C-SCAN algorithm");
+        System.out.println("CScan algorithm");
         cscan.calculate(requests, head);
 
         // Calculate the total head movement and seek time for each algorithm
-       System.out.println("SCAN algorithm");
+       System.out.println("Scan algorithm");
        scan.calculate(requests, head);
     }
 }
