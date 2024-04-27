@@ -10,10 +10,10 @@ public class FCFS {
         int currentTrack = head;
 
         // Calculate total head movement
-        for (int request : requests) {
+        for (int request : requests) {  // Loop through the requests
             // Add the absolute difference between the current track and the request
-            totalHeadMovement += Math.abs(currentTrack - request);
-            currentTrack = request;
+            totalHeadMovement += Math.abs(currentTrack - request); // Calculate the total head movement
+            currentTrack = request; // Set the current track to the request
         }
 
         // Print the total head movement

@@ -2,15 +2,17 @@
 // Algorithm
 // https://www.geeksforgeeks.org/c-look-disk-scheduling-algorithm/
 
+
 package org.example;
 
 public class CLOOK {
     public void calculate(int[] req, int head) {
+
         int seek_count = 0;
         int distance, cur_track;
         int size = req.length;
         // int[] diff = new int[size + 1];
-        int[] seek_sequence = new int[size + 1];
+        int[] seek_sequence = new int[size + 1]; // This is the sequence in which the disk arm will move
 
         // Copy the req array to seek_sequence array
         for (int i = 0; i < size; i++) {
@@ -19,6 +21,8 @@ public class CLOOK {
 
         // Run the while loop two times
         // to move in both directions
+
+        //This is important because the head will move in one direction and then move in the opposite direction
         for (int i = 0; i < 2; i++) {
             if (i == 0) {
                 // First loop in the left direction
@@ -53,10 +57,14 @@ public class CLOOK {
             }
         }
 
-        // Seek sequence
+        // Seek sequence will contain the tracks
+        // that have been accessed
+        // Print the total seek count
         System.out.println("Total Head Movement: " + seek_count);
         System.out.println("Total Seek Time: " + seek_count);
         System.out.println("Seek Sequence: ");
+
+
         // Print the sequence
         for (int i = 0; i < size + 1; i++) {
             System.out.print(seek_sequence[i] + " ");

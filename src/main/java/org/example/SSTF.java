@@ -7,11 +7,11 @@ package org.example;
 public class SSTF {
     public void calculate(int[] requests, int head) {
         // Copy the requests array to avoid modifying the original array
+        //We want to avoid modifying the original array because we need to use it for other algorithms
         int totalHeadMovement = 0;
         int currentTrack = head;
 
-
-        // Copy the requests array to avoid modifying the original array
+        // Iterate through the requests
         for (int request : requests) {
             // Calculate the total head movement
             int minDistance = Integer.MAX_VALUE;
@@ -25,9 +25,11 @@ public class SSTF {
                 }
 
                 // Calculate the distance between the current track and the request
+                //This is important because we need to find the request with the shortest seek time
                 int distance = Math.abs(currentTrack - requests[i]);
                 if (distance < minDistance) {
                     // Update the minimum distance and the next track to move to
+                    //this is important because we need to find the request with the shortest seek time
                     minDistance = distance;
                     nextTrack = i;
                 }
